@@ -13,6 +13,8 @@ import {CommonModule} from "@angular/common";
 import {UsersListComponent} from "./features/users/users-list/users-list.component";
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
+import {PostEffects} from "./store/effects/post.effects";
+import {PostReducer} from "./store/reducers/post.reducer";
 
 @NgModule({
   declarations: [
@@ -23,8 +25,8 @@ import {FormsModule} from "@angular/forms";
     HttpClientModule,
     CommonModule,
     AppRoutingModule,
-    StoreModule.forRoot({ user: userReducer }),
-    EffectsModule.forRoot([UserEffects]),
+    StoreModule.forRoot({ user: userReducer,post:PostReducer}),
+    EffectsModule.forRoot([UserEffects,PostEffects]),
     StoreDevtoolsModule.instrument({ maxAge: 25 }),
     UsersListComponent,
     FormsModule,
