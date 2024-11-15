@@ -1,0 +1,16 @@
+<div *ngIf="users$ | async as users">
+  <ul>
+    <li *ngFor="let user of users">
+      {{ user.name }} - {{ user.email }}
+      <button (click)="onUpdateUser(user)">Modifier</button>
+      <button (click)="onDeleteUser(user.id)">Supprimer</button>
+    </li>
+  </ul>
+
+  <div>
+    <h3>Ajouter un utilisateur</h3>
+    <input [(ngModel)]="newUser.name" placeholder="Nom" />
+    <input [(ngModel)]="newUser.email" placeholder="Email" />
+    <button (click)="onAddUser()">Ajouter</button>
+  </div>
+</div>
