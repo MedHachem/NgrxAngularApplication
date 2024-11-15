@@ -38,5 +38,10 @@ export class PostsListComponent implements OnInit{
     this.store.dispatch(PostsActions.loadPosts());
   }
 
+  deletePostById(id:number)
+  {
+    this.store.dispatch(PostsActions.deletePost({id}));
+  }
+
 
 }

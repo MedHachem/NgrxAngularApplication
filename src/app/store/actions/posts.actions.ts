@@ -7,5 +7,9 @@ export const PostsActions = createActionGroup({
     'Load Posts': emptyProps(),
     'Load Posts Success': props<{ posts: Post[] }>(),
     'Load Posts Failure': props<{ error: any }>(),
+
+    'Delete Post':props<{ id: number }>(),
+    'Delete Post Success':props< {id:number}>(),
+    'Delete Post Failure' :props<{error:any}>(),
   }
 });
